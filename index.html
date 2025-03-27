@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueño de Verano - Control NFC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-moon"></i> Sueño de Verano</h1>
+            <p class="subtitle">Control de Pulseras NFC</p>
+        </header>
+
+        <div class="nfc-reader">
+            <div class="scan-area">
+                <i class="fas fa-wifi fa-flip-vertical"></i>
+                <p>Acerca la pulsera NFC para escanear</p>
+                <button id="startScanBtn" class="scan-button">
+                    <i class="fas fa-play"></i> Iniciar Escaneo
+                </button>
+            </div>
+            <div id="scanStatus" class="scan-status">
+                NFC desactivado
+            </div>
+        </div>
+
+        <div class="card-info hidden">
+            <h2>Información de la Pulsera</h2>
+            <form id="nfcForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-wallet"></i> Balance:</label>
+                    <div class="balance-control">
+                        <input type="number" id="balance" value="0" readonly>
+                        <button type="button" class="add-balance"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-utensils"></i> Cena:</label>
+                    <select id="cena">
+                        <option value="no">No recogida</option>
+                        <option value="si">Recogida</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-hand-holding"></i> Pulsera entregada:</label>
+                    <select id="entregada">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-door-closed"></i> Ropero:</label>
+                    <input type="number" id="ropero" min="0">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="save-btn"><i class="fas fa-save"></i> Guardar</button>
+                    <button type="button" class="cancel-btn"><i class="fas fa-times"></i> Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="modal" class="modal hidden" style="display: none;">
+            <div class="modal-content">
+                <h3>Añadir Balance</h3>
+                <div class="form-group">
+                    <label>Cantidad a añadir:</label>
+                    <input type="number" id="addAmount" min="0" step="0.01">
+                </div>
+                <div class="button-group">
+                    <button id="confirmAdd"><i class="fas fa-check"></i> Confirmar</button>
+                    <button id="cancelAdd"><i class="fas fa-times"></i> Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

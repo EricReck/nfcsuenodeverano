@@ -1,0 +1,12 @@
+{
+  "name": "sueno-de-verano-nfc",
+  "version": "1.0.0",
+  "description": "Control de pulseras NFC para Sueño de Verano",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+} 
